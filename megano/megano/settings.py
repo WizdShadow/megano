@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'diploma_frontend.frontend.apps.FrontendConfig',
     "user",
+    "product",
 ]
 
 MIDDLEWARE = [
