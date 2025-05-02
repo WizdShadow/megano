@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Product, ProductImages, Tags, ProductTask, Reviews, Specifications, SpecificationsProduct
+from .models import Category, Product, ProductImages, Tags, ProductTask, Reviews, Specifications, SpecificationsProduct, Timeuser
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
@@ -33,3 +33,6 @@ class SpecificationsAdmin(admin.ModelAdmin):
 class SpecificationsProductAdmin(admin.ModelAdmin):
     list_display = [field.name for field in SpecificationsProduct._meta.fields]
 
+@admin.register(Timeuser)
+class TimeuserAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in Timeuser._meta.fields]

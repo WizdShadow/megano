@@ -19,6 +19,9 @@ class Product(models.Model):
     fullDescription = models.TextField(default="No fullDescription")
     freeDelivery = models.BooleanField(default=True)
     rating = models.DecimalField(max_digits=10, decimal_places=1)
+    dateFrom = models.CharField(max_length=100, null=True, blank=True)
+    dateTo = models.CharField(max_length=100, null=True, blank=True)
+    sale_price = models.IntegerField(null=True, blank=True)
 
     def __str__(self):
         return self.title
@@ -56,3 +59,16 @@ class Specifications(models.Model):
 class SpecificationsProduct(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     specific = models.ForeignKey(Specifications, on_delete=models.CASCADE)
+
+class Timeuser(models.Model):
+    user = models.IntegerField()
+
+class Timebasket(models.Model):
+    user_id = models.ForeignKey(Timeuser, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    count = models.IntegerField()
+    
+class Basket(models.Model):
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    count = models.IntegerField()
