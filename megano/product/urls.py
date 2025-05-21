@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import categories, product, get_tags, get_rev, popular, banner, limitid, slayer, basket
+from .views import categories, product, get_tags, get_rev, popular, banner, limitid, slayer, basket, catalog
 
 urlpatterns = [
     path('categories/', categories, name='categories'),
@@ -11,5 +11,6 @@ urlpatterns = [
     path('products/limited/', limitid, name='limitid'),
     path('sales/', slayer, name='slayer'),
     path('basket/', basket, name='basket'),
+    path('catalog/', catalog, name='catalog'),
     
 ]
