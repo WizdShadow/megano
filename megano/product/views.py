@@ -14,15 +14,15 @@ def categories(request):
                 'id': i.id,
                 'title': i.title,
                 "image":{
-                    "src": "https://img.mvideo.ru/Pdb/400438595b.jpg",
-                    "alt": "Image alt string"
+                    "src": i.images,
+                    "alt": i.images,
                     },
                 "subcategories":[{
                     "id": i.id,
                     "title": i.title,
                     "image":{
-                        "src": "https://img.mvideo.ru/Pdb/400438595b.jpg",
-                        "alt": "Image alt string"
+                        "src": i.images,
+                        "alt": i.images,
                         }
                 }]
                 }
