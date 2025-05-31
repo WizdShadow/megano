@@ -227,6 +227,7 @@ def basket(request):
                     return JsonResponse({"status": None})
                 
                 request.session["user_id"] = num.get("max_num") + 1
+                request.session["order_id"] = []
                 add = Timeuser.objects.create(user=num.get("max_num")+1)
                 add.save()
                 return JsonResponse({"status": None})

@@ -1,10 +1,12 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
-from django.http import FileResponse
+from django.http import FileResponse,HttpResponse
 from django.contrib.auth import authenticate, login, logout
 from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
 from .models import User, MyUser
+from product.models import Product
+from order.models import OrderProdcut, OrderModel
 import json
 
 def logins(request):
@@ -20,9 +22,9 @@ def logins(request):
     if user.check_password(data.get('password')):
         user = authenticate(request, username=user.username, password=data.get('password'))
         login(request, user)
-        return redirect('profile/')
+        return HttpResponse(status=200)
     
-    return redirect('/')   
+    return HttpResponse(status=200)   
 
 
 def register(request):
@@ -36,7 +38,7 @@ def register(request):
     
     user.save()
 
-    return redirect('/')
+    return HttpResponse(status=200)
 
 
 @login_required

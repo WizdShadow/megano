@@ -8,5 +8,6 @@ urlpatterns = [
     path("", include("frontend.urls")),
     path("api/", include("user.urls")),
     path("api/", include("product.urls")),
-    path ('profile/<str:filename>', get_images, name='filename')
+    path ('profile/<str:filename>', get_images, name='filename'),
+    path("api/", include("order.urls")),
 ]

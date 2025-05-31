@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'diploma_frontend.frontend.apps.FrontendConfig',
     "user",
     "product",
+    "order",
 ]
 
 MIDDLEWARE = [
