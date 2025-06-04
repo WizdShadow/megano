@@ -9,6 +9,7 @@ from product.models import Product
 from order.models import OrderProdcut, OrderModel
 import json
 
+
 def logins(request):
     if request.method != 'POST':
         return redirect('/')
@@ -69,6 +70,7 @@ def profile(request):
     user.save()
     return redirect('profile/')
 
+
 @login_required
 def post_profile_password(request):
     data = json.loads(request.body)
@@ -79,6 +81,7 @@ def post_profile_password(request):
         user.save()
         return JsonResponse({'status': 'success'})
     return JsonResponse({'status': 'error'})
+
 
 @login_required
 def post_profile_avatar(request):

@@ -35,7 +35,6 @@ def order(request):
                 current_time = time.localtime()
                 t = time.strftime("%d.%m.%Y %H:%M:%S",current_time)
                 user = request.session.get("user_id")
-                user_orm = Timeuser.objects.get(user=user)
                 new_order= OrderModel.objects.create(createdAt=t)
                 new_order.save()
                 request.session["order_id"].append(new_order.id)
@@ -115,6 +114,7 @@ def order_id(request, id):
                              "city": order.city,
                              "address": order.address,
                              "products": spisoc})
+    
     elif request.method == "POST":
         data = json.loads(request.body)
         order = OrderModel.objects.get(pk=id)
