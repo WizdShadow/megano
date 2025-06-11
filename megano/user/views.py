@@ -1,13 +1,10 @@
-from django.shortcuts import render
+import json
 from django.shortcuts import redirect
-from django.http import FileResponse,HttpResponse
+from django.http import FileResponse, HttpResponse
 from django.contrib.auth import authenticate, login, logout
 from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
-from .models import User, MyUser
-from product.models import Product
-from order.models import OrderProdcut, OrderModel
-import json
+from .models import User
 
 
 def logins(request):
@@ -15,17 +12,13 @@ def logins(request):
         return redirect('/')
     data = json.loads(request.body)
     user = User.objects.get(username=data.get('username'))
-    
-    
     if not user:
         return redirect('/login')
-    
     if user.check_password(data.get('password')):
         user = authenticate(request, username=user.username, password=data.get('password'))
         login(request, user)
         return HttpResponse(status=200)
-    
-    return HttpResponse(status=200)   
+    return HttpResponse(status=200)
 
 
 def register(request):
@@ -36,9 +29,7 @@ def register(request):
         username=data.get('username'),
         password=data.get('password'),
     )
-    
     user.save()
-
     return HttpResponse(status=200)
 
 
@@ -75,7 +66,6 @@ def profile(request):
 def post_profile_password(request):
     data = json.loads(request.body)
     user = User.objects.get(pk=request.user.pk)
-    
     if user.check_password(data.get('password')):
         user.set_password(data.get('newPassword'))
         user.save()
@@ -93,7 +83,7 @@ def post_profile_avatar(request):
         for chunk in file.chunks():
             f.write(chunk)
     return JsonResponse({'status': 'success'})
-    
+
 
 @login_required
 def get_images(request, filename):

@@ -1,0 +1,19 @@
+asgiref==3.8.1
+astroid==3.3.10
+dill==0.4.0
+diploma-frontend @ file:///home/desgun/Django_github/megano/diploma_frontend/dist/diploma-frontend-0.6.tar.gz#sha256=d8ffd5df7377a4555e2245e1b1ecfff83a92c3e17fdf61c84a996f63b9f1af9f
+Django==5.2
+django-extensions==4.1
+django-filter==25.1
+djangorestframework==3.16.0
+flake8==7.2.0
+isort==6.0.1
+mccabe==0.7.0
+pillow==11.2.1
+platformdirs==4.3.8
+pycodestyle==2.13.0
+pyflakes==3.3.2
+pylint==3.3.7
+setuptools==79.0.1
+sqlparse==0.5.3
+tomlkit==0.13.3
