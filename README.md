@@ -1,13 +1,10 @@
-Запуск проекта на локальном компьютере
-
 Перед запуска приложение ОБЕЗАТЕЛЛЬНО ВЫПОЛНИТЕ ЭТИ УСЛОВИЯ:
-
 
 1. Установить зависимости
     
-    pip install megano/megano/diploma_frontend/dist/diploma-frontend-0.6.tar.gz
+    1.1 pip install megano/megano/diploma_frontend/dist/diploma-frontend-0.6.tar.gz
 
-    pip install -r megano/reg.txt
+    1.2 pip install -r megano/reg.txt
 
 2. Устноавить тестовые данные для БАЗЫ
 
@@ -16,3 +13,11 @@
 3. Запуск приложения
 
     python megano/megano/manage.py runserver
+
+
+ПРИМЕЧАНИЕ
+
+Данные тестовый пользователь данные:
+
+Login: DesGun
+Password: test
