@@ -1,7 +1,6 @@
 asgiref==3.8.1
 astroid==3.3.10
 dill==0.4.0
-diploma-frontend @ file:///home/desgun/Django_github/megano/diploma_frontend/dist/diploma-frontend-0.6.tar.gz#sha256=d8ffd5df7377a4555e2245e1b1ecfff83a92c3e17fdf61c84a996f63b9f1af9f
 Django==5.2
 django-extensions==4.1
 django-filter==25.1
